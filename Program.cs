@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CadastroPessoa
 {
@@ -6,40 +7,43 @@ namespace CadastroPessoa
     {
         static void Main(string[] args)
         {
+           var pessoa = new Dictionary<string, string>();
+           
            Console.WriteLine("Qual é o seu nome?");
-           string nome = Console.ReadLine(); 
-
+           pessoa["Nome"] = Console.ReadLine(); 
+           
            Console.WriteLine("RG:");
-           string rg = Console.ReadLine(); 
+           pessoa["RG"] = Console.ReadLine(); 
 
            Console.WriteLine("CPF:");
-           string cpf = Console.ReadLine(); 
+           pessoa["CPF"] = Console.ReadLine(); 
 
            Console.WriteLine("Idade:");
-           string idade = Console.ReadLine();
+           pessoa["Idade"] = Console.ReadLine();
 
            Console.WriteLine("Gênero:");
-           string genero = Console.ReadLine();
+           pessoa["Gênero"] = Console.ReadLine();
 
            Console.WriteLine("Estado civil:");
-           string estado_civil = Console.ReadLine();
+           pessoa["Estado Civil"] = Console.ReadLine();
 
            Console.WriteLine("Profissão:");
-           string profissao = Console.ReadLine();
+           pessoa["Profissao"] = Console.ReadLine();
 
            Console.WriteLine("Local de Nascimento:");
-           string local_nascimento = Console.ReadLine();
+           pessoa["Local de Nascimento"] = Console.ReadLine();
 
            Console.WriteLine("Endereço:");
-           string endereco = Console.ReadLine();
+           pessoa["Endereco"] = Console.ReadLine();
 
            Console.WriteLine("Cidade:");
-           string cidade = Console.ReadLine();
+           pessoa["Cidade"] = Console.ReadLine();
 
-           Console.WriteLine("Nome: " + nome + ", RG: " + rg + ", CPF: " + cpf);
-           Console.WriteLine("Idade: " + idade + ", Gênero: " + genero + ", Estado Civil: " + estado_civil);
-           Console.WriteLine("Profissao: " + profissao + ", Local de Nascimento: " + local_nascimento );
-           Console.WriteLine("Endereço: " + endereco + ", Cidade: " + cidade);
+           Console.WriteLine("\n\n\n");
+           foreach (var atributo in pessoa)
+           {
+               Console.WriteLine(atributo.Key + ": " + atributo.Value);
+           }
         }
     }
 }
